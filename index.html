@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day Proposal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            text-align: center;
+            margin: 50px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <form id="valentineForm">
+        <label for="crushName">For my dear friend Hizumin!</label>
+        <label for="valentineQuestion">I've been thinking a lot and realised how happy you make me, and wanted to know if you could be my Valentine? I promise that if you give me a chance i won't dissapoint you!</label>
+        <input type="text" id="crushName" name="crushName" value="Hizumin" readonly hidden>
+        <textarea id="valentineQuestion" name="valentineQuestion" placeholder="Your message here..." rows="4" required></textarea>
+        <button type="button" onclick="submitForm()">Submit</button>
+    </form>
+
+    <div id="response" style="display: none; margin-top: 20px;">
+        <h2>Response from Hizumin:</h2>
+        <p id="responseMessage"></p>
+    </div>
+
+    <script>
+        function submitForm() {
+            const valentineQuestion = document.getElementById('valentineQuestion').value;
+            const responseMessage = document.getElementById('responseMessage');
+            const responseDiv = document.getElementById('response');
+
+            // Replace this with your own logic to handle the response
+            // For now, just displaying a simple response
+            responseMessage.textContent = valentineQuestion === '' ? 'Please enter a message.' : 'Kaio has received your message!';
+            
+            responseDiv.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
